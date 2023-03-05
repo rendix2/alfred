@@ -1,0 +1,53 @@
+extensions:
+    #nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
+    nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
+    nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension
+    nettrine.orm: Nettrine\ORM\DI\OrmExtension
+    nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
+    nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension
+    nettrine.cache: Nettrine\Cache\DI\CacheExtension
+    nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
+    nettrine.extensions.beberlei: Nettrine\Extensions\Beberlei\DI\BeberleiBehaviorExtension
+    nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+
+nettrine.dbal:
+    debug:
+        panel: %debugMode%
+    connection:
+        driver: %database.main.driver%
+        host: %database.main.host%
+        user: %database.main.username%
+        password: %database.main.password%
+        dbname: %database.main.database%
+        charset: %database.main.charset%
+        default_table_options:
+            charset: %database.main.database%
+            collate: utf8_czech_ci
+
+nettrine.cache:
+    driver: Doctrine\Common\Cache\SQLite3Cache(SQLite3('%tempDir%/cache/doctrineCache.db'), 'cache')
+
+nettrine.orm:
+    configuration:
+        namingStrategy: Alfred\App\Model\CamelCaseStrategy
+        quoteStrategy: Alfred\App\Model\QuoteStrategy
+
+nettrine.orm.attributes:
+  mapping:
+      Alfred\App\Model\Entity: %appDir%/Model/Entity
+
+nettrine.extensions.beberlei:
+    driver: mysql
+
+nettrine.migrations:
+    table: migrations
+    column: version
+    directory: %appDir%/Migrations
+    namespace: Alfred\App\Migrations
+    versionsOrganization: null # null, year, year_and_month
+
+decorator:
+	Symfony\Component\Console\Command\Command:
+		tags: [kdyby.console.command]
+	Symfony\Component\Console\Helper\Helper:
+		tags: [kdyby.console.helper]

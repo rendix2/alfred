@@ -1,0 +1,12 @@
+services:
+    TelegramApi:
+        create: Telegram\Bot\Api(%telegram.apiToken%)
+        setup:
+            - addCommand(@OpenAICommand)
+            - addCommand(@VersionCommand)
+            - addCommand(@WeatherCommand)
+            - commandsHandler(true)
+
+    VersionCommand: Alfred\App\BotModule\Commands\VersionCommand
+    OpenAICommand: Alfred\App\BotModule\Commands\OpenAiCommand
+    WeatherCommand: Alfred\App\BotModule\Commands\WeatherCommand

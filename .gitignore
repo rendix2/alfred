@@ -1,0 +1,7 @@
+.idea
+nbroject
+
+web/src/vendor
+web/src/temp
+web/src/log
+web/src/www/node_modules

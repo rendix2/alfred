@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{ifset title}{include title|stripHtml}{/ifset}</title>
+
+	{* bootstrap *}
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/happy-inputs/src/happy.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/ublaboo-datagrid/assets/datagrid.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/ublaboo-datagrid/assets/datagrid-spinners.css">
+
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap-select/dist/css/bootstrap-select.css">
+
+	{* font awesome *}
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/@fortawesome/fontawesome-free/css/all.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/@fortawesome/fontawesome-free/css/solid.css">
+	{* font awesome *}
+	<link rel="stylesheet" type="text/css" href={$basePath}/css/typeahead.css">
+</head>
+
+<body>
+    {* flashes *}
+    {snippet flashes}
+	    {foreach $flashes as $flash}
+		<div class="alert alert-{$flash->type}">{$flash->message}</div>
+	    {/foreach}
+	{/snippet}
+	{* flashes *}
+
+	<div class="container-fluid">
+		{include content}
+	</div>
+
+    <script src="{$basePath}/node_modules/happy-inputs/src/nomodule-es5-fallback.js"></script>
+    <script>
+        var happy = new Happy;
+
+        happy.init();
+    </script>
+
+    <script src="{$basePath}/node_modules/jquery/dist/jquery.js"></script>
+	<script src="{$basePath}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="{$basePath}/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="{$basePath}/node_modules/jquery-ui-sortable/jquery-ui.min.js"></script>
+    <script src="{$basePath}/node_modules/naja/dist/Naja.js"></script>
+    <script src="{$basePath}/node_modules/ublaboo-datagrid/assets/datagrid.js"></script>
+	<script src="{$basePath}/node_modules/nette-forms/src/assets/netteForms.js"></script>
+	<script src="{$basePath}/node_modules/bootstrap-select/dist/js/bootstrap-select.js"></script>
+	<script src="{$basePath}/node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+	<script>naja.initialize();</script>
+
+	<!-- nette.ajax.js -->
+    <script src="{$basePath}/js/nette.ajax.js"></script>
+    <!-- handlebars.js -->
+    <script src="{$basePath}/js/handlebars.min-v4.7.3.js"></script>
+    <!-- typehead.js -->
+    <script src="{$basePath}/js/typeahead.js"></script>
+    <script src="{$basePath}/js/vojtys.typeahead.js"></script>
+
+</body>
+</html>

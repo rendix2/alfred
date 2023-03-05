@@ -1,0 +1,12 @@
+{extends $originalTemplate}
+
+{define col-word}
+    <a href="{plink Word:edit, $item->word->id}">{$item->word->wordText}</a>
+{/define}
+{define col-event}
+    <a href="{plink Event:edit, $item->event->id}">{$item->event->name}</a>
+{/define}
+
+{define col-chat}
+    <a href="{plink Chat:edit, $item->chat->id}">{$item->chat->name}</a>
+{/define}

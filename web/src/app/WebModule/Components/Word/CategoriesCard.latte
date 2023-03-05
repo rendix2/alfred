@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+    Kategorie
+
+    {control quickAddCategory}
+    </div>
+    <div class="card-body">
+        {snippet categories}
+
+        <table>
+        {foreach $categories as $categoryRows}
+            <tr>
+            {foreach $categoryRows as $category}
+            <td>
+                {if $category->hasCategory}
+                    {if $category->isActive}
+                    <a href="{link delete!, $word->id, $category->id}" class="ajax badge badge-primary" title="Aktivní kategorie">
+                        {$category->name}
+                    </a>
+                    {else}
+                    <a href="{link delete!, $word->id, $category->id}" class="ajax badge badge-danger" title="Neaktivní kategorie">
+                        {$category->name}
+                    </a>
+                    {/if}
+                {else}
+                <a href="{link add!, $word->id, $category->id}" class="ajax badge badge-secondary">
+                    {$category->name}
+                <a>
+                {/if}
+            </td>
+            {/foreach}
+            </tr>
+        {/foreach}
+        </table>
+        {/snippet}
+    </div>
+</div>

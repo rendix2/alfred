@@ -1,0 +1,32 @@
+{extends $originalTemplate}
+
+{define col-answer}
+    {if $item->answer}
+        {$item->answer->answerText}
+    {/if}
+{/define}
+
+{define col-gif}
+    {if $item->gif}
+    <img src="{$item->gif->url}" style="width:64px;height:64px;">
+    {/if}
+{/define}
+
+{define col-location}
+    {if $item->location}
+    <a href="https://mapy.cz/zakladni?source=coor&id={$item->location->longitude},{$item->location->latitude}&x={$item->location->longitude}&y={$item->location->latitude}">
+        {$item->location->latitude}N, {$item->location->longitude}E
+    </a>
+    {/if}
+{/define}
+
+{define col-poll}
+    {if $item->poll}
+        <div>{$item->poll->question}</div>
+        <ul>
+        {foreach $item->poll->options as $option}
+            <li>{$option->optionText}</li>
+        {/foreach}
+        </ul>
+    {/if}
+{/define}

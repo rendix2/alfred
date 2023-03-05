@@ -1,0 +1,59 @@
+{extends $originalTemplate}
+
+{define col-wordText}
+    <strong>{$item->wordText}</strong>
+{/define}
+
+{define col-variants}
+    {foreach $item->variants as $variant}
+        <strong>{$variant->variantText}</strong>
+    {/foreach}
+{/define}
+
+{define col-categories}
+    {foreach $item->categories as $category}
+        {if $category->isActive}
+        <div class="badge badge-pill badge-primary" title="Aktivní kategorie">{$category->name}</div>
+        {else}
+        <div class="badge badge-pill badge-danger" title="Neaktivní kategorie">{$category->name}</div>
+        {/if}
+    {/foreach}
+{/define}
+
+{define col-requests}
+    {foreach $item->requests as $request}
+        <div class="badge badge-primary">{$request->event->name}/{$request->chat->name}</div>
+    {/foreach}
+{/define}
+
+{define col-chats}
+    {php $chats = []}
+    {foreach $item->requests as $request}
+        {php $chats[$request->chat->id] = $request->chat}
+    {/foreach}
+
+    {foreach $chats as $chat}
+        {if $chat->isActive}
+        <div class="badge badge-primary" title="Aktivní chat">{$chat->name}</div>
+        {else}
+        <div class="badge badge-danger" title="Neaktivní chat">{$chat->name}</div>
+        {/if}
+    {/foreach}
+{/define}
+
+{define col-events}
+    {php $events = []}
+    {foreach $item->requests as $request}
+        {php $events[$request->event->id] = $request->event}
+    {/foreach}
+
+    {foreach $events as $event}
+        {if $event->isActive}
+        <div class="badge badge-primary" title="Aktivní událost">{$event->name}</div>
+        {else}
+        <div class="badge badge-danger" title="Neaktivní událost">{$event->name}</div>
+        {/if}
+    {/foreach}
+{/define}
+
+

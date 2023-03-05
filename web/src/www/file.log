@@ -1,0 +1,1248 @@
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.515 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:33
+-- driver: sqlite/
+-- 2023-02-19 23:18:57
+
+ERROR: [1] table logs has no column named dated
+-- SQL: INSERT INTO [logs] ([log], [dated]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":[{"id":3,"text":"dobr[eé] r[aá]no","regularExpression":"","description":"Dobré ráno","gender":"both","priority":10,"isActive":true,"isExplicit":false,"createdAt":{"date":"2023-02-17 16:17:39.000000","timezone_type":3,"timezone":"Europe/Prague"},"updatedAt":null,"categories":{},"variants":{},"requests":{}}],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676845140)
+-- driver: sqlite/
+-- 2023-02-19 23:19:00
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.529 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:33
+-- driver: sqlite/
+-- 2023-02-19 23:19:20
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":[{"id":3,"text":"dobr[eé] r[aá]no","regularExpression":"","description":"Dobré ráno","gender":"both","priority":10,"isActive":true,"isExplicit":false,"createdAt":{"date":"2023-02-17 16:17:39.000000","timezone_type":3,"timezone":"Europe/Prague"},"updatedAt":null,"categories":{},"variants":{},"requests":{}}],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676845163);
+-- rows: 1
+-- takes: 13.616 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:41
+-- driver: sqlite/
+-- 2023-02-19 23:19:23
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.243 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:33
+-- driver: sqlite/
+-- 2023-02-19 23:24:57
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676845501);
+-- rows: 1
+-- takes: 16.587 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:41
+-- driver: sqlite/
+-- 2023-02-19 23:25:01
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.412 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:34:07
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676846049);
+-- rows: 1
+-- takes: 13.685 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:34:09
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.211 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:35:03
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676846106);
+-- rows: 1
+-- takes: 12.149 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:35:06
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.424 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:35:11
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676846114);
+-- rows: 1
+-- takes: 13.656 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:35:14
+
+ERROR: [1] near "AUTO_INCREMENT": syntax error
+-- SQL: CREATE TABLE IF NOT EXISTS logs (id int PRIMARY KEY AUTO_INCREMENT, log JSON NOT NULL, date DATETIME NOT NULL);
+-- driver: sqlite/
+-- 2023-02-19 23:35:54
+
+OK: CREATE TABLE IF NOT EXISTS logs (id int AUTO_INCREMENT PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.129 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:36:15
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676846178);
+-- rows: 1
+-- takes: 12.469 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:36:18
+
+ERROR: [1] near "AUTOINCREMENT": syntax error
+-- SQL: CREATE TABLE IF NOT EXISTS logs (id int AUTOINCREMENT PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- driver: sqlite/
+-- 2023-02-19 23:37:28
+
+ERROR: [1] near "AUTOINCREMENT": syntax error
+-- SQL: CREATE TABLE IF NOT EXISTS logs (id int AUTOINCREMENT PRIMARY KEY, log JSON NOT NULL, date DATETIME NOT NULL);
+-- driver: sqlite/
+-- 2023-02-19 23:39:15
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.763 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:39:31
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":{"1":1},"selectedResponse":1}', 1676846374);
+-- rows: 1
+-- takes: 14.520 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:39:34
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 11.965 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:40:42
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.303 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:41:26
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":{"4":4},"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676846489);
+-- rows: 1
+-- takes: 15.629 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:41:29
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 15.028 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:42:32
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":-1001525276996,"event":1,"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676846555);
+-- rows: 1
+-- takes: 15.052 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:42:35
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.179 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:44:14
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996,"isActive":true,"requests":{}},"event":1,"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676846657);
+-- rows: 1
+-- takes: 15.323 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:44:17
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.107 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:45:20
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":1,"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676846723);
+-- rows: 1
+-- takes: 12.229 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:45:23
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 15.041 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:48:09
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.387 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-19 23:48:39
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1676846922);
+-- rows: 1
+-- takes: 12.005 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-19 23:48:42
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 54.414 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-24 16:29:57
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.797 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-24 16:30:52
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.836 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-24 16:31:25
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1677252688);
+-- rows: 1
+-- takes: 22.734 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-24 16:31:28
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 22.361 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:36
+-- driver: sqlite/
+-- 2023-02-24 16:40:58
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1}', 1677253260);
+-- rows: 1
+-- takes: 23.153 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:44
+-- driver: sqlite/
+-- 2023-02-24 16:41:00
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 33.424 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 16:43:29
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\YolandaStrategy"}', 1677512612);
+-- rows: 1
+-- takes: 28.456 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-27 16:43:32
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.200 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 16:44:28
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677512673);
+-- rows: 1
+-- takes: 23.629 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-27 16:44:33
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.237 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 16:45:35
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677512737);
+-- rows: 1
+-- takes: 43.603 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-27 16:45:37
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 15.392 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 22:20:06
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 28.590 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 22:30:31
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677533435);
+-- rows: 1
+-- takes: 29.153 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-27 22:30:35
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.514 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-27 22:31:36
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\YolandaStrategy"}', 1677533498);
+-- rows: 1
+-- takes: 18.094 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-27 22:31:38
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.581 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 10:33:57
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\YolandaStrategy"}', 1677576838);
+-- rows: 1
+-- takes: 14.103 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 10:33:58
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.982 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 10:35:00
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.059 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 11:17:22
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.208 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 11:17:52
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677579474);
+-- rows: 1
+-- takes: 13.792 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 11:17:54
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.781 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 11:19:37
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 22.491 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:47:19
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.382 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:48:05
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.068 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:48:44
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.949 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:49:24
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677599366);
+-- rows: 1
+-- takes: 21.594 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 16:49:26
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.436 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:50:21
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677599424);
+-- rows: 1
+-- takes: 21.235 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 16:50:24
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 26.152 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:52:56
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.083 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:58:47
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677599929);
+-- rows: 1
+-- takes: 19.621 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 16:58:49
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 21.820 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 16:59:14
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677599959);
+-- rows: 1
+-- takes: 39.276 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 16:59:19
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.800 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:01:54
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677600119);
+-- rows: 1
+-- takes: 42.166 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:01:59
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 27.128 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:10:13
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 40.208 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:11:29
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.250 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:11:42
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677600709);
+-- rows: 1
+-- takes: 41.211 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:11:49
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 4.599 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:11:52
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677600715);
+-- rows: 1
+-- takes: 38.135 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:11:55
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.060 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:13:35
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 22.866 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:14:11
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.113 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:15:59
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 45.808 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:22:33
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601492);
+-- rows: 1
+-- takes: 39.895 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:24:52
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.899 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:25:50
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601553);
+-- rows: 1
+-- takes: 37.583 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:25:53
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 26.024 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:26:07
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 26.361 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:26:24
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.490 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:28:05
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.094 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:28:17
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.279 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:29:16
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601758);
+-- rows: 1
+-- takes: 37.911 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:29:18
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 28.967 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:29:28
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.711 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:30:38
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601841);
+-- rows: 1
+-- takes: 20.375 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:30:41
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.512 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:30:49
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601850);
+-- rows: 1
+-- takes: 20.083 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:30:50
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.605 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:30:56
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 25.075 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:32:10
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.029 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:32:45
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601972);
+-- rows: 1
+-- takes: 37.476 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:32:52
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 21.512 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:33:02
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677601989);
+-- rows: 1
+-- takes: 41.284 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-02-28 17:33:09
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.185 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-02-28 17:33:23
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 56.315 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 20:43:35
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.000 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 20:46:12
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677699980);
+-- rows: 1
+-- takes: 17.115 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 20:46:20
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.694 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 20:48:49
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.958 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 20:49:06
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[9,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677700154);
+-- rows: 1
+-- takes: 16.967 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 20:49:14
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 15.210 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 20:59:48
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.415 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:00:57
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 21.908 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:06:55
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[13,9,16,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677701223);
+-- rows: 1
+-- takes: 20.343 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:07:03
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.960 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:08:18
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.905 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:10:04
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.614 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:11:31
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.833 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:13:14
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.963 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:15:09
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.045 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:17:17
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677701846);
+-- rows: 1
+-- takes: 17.222 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:17:26
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 15.654 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:24:16
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677702264);
+-- rows: 1
+-- takes: 15.459 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:24:24
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.438 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:26:06
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677702377);
+-- rows: 1
+-- takes: 26.496 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:26:17
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.739 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:34:30
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 24.172 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:37:27
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.060 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:39:47
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703193);
+-- rows: 1
+-- takes: 21.188 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:39:53
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.440 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:40:49
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703254);
+-- rows: 1
+-- takes: 15.995 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:40:54
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 17.461 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:41:06
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703271);
+-- rows: 1
+-- takes: 24.332 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:41:11
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.632 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:42:55
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703383);
+-- rows: 1
+-- takes: 19.822 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:43:03
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.608 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:44:09
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703458);
+-- rows: 1
+-- takes: 17.551 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:44:18
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.419 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:44:25
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703473);
+-- rows: 1
+-- takes: 17.318 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:44:33
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 18.554 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:50:16
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":2,"name":"Volby","description":"Volby"},"user":1,"possibleRequests":[13,4],"selectedRequest":13,"possibleResponses":[2],"selectedResponse":2,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677703825);
+-- rows: 1
+-- takes: 17.379 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:50:25
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.740 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:56:21
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":2,"name":"Volby","description":"Volby"},"user":1,"possibleRequests":[13,4],"selectedRequest":13,"possibleResponses":[2],"selectedResponse":2,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677704190);
+-- rows: 1
+-- takes: 15.232 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:56:30
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 21.013 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:58:26
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":2,"name":"Volby","description":"Volby"},"user":1,"possibleRequests":[13,16,4],"selectedRequest":13,"possibleResponses":[2],"selectedResponse":2,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677704314);
+-- rows: 1
+-- takes: 16.474 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:58:34
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.999 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 21:59:22
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[13,16,4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677704371);
+-- rows: 1
+-- takes: 16.914 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 21:59:31
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.507 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-01 22:05:14
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677704723);
+-- rows: 1
+-- takes: 16.613 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-01 22:05:23
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 28.214 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-02 16:50:44
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.472 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-02 16:52:29
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677772360);
+-- rows: 1
+-- takes: 31.321 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-02 16:52:40
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 38.489 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 22:20:42
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.269 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 22:20:47
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.730 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 22:21:33
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677878495);
+-- rows: 1
+-- takes: 16.093 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-03 22:21:35
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.036 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 22:23:42
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677878624);
+-- rows: 1
+-- takes: 15.866 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-03 22:23:44
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 10.759 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 22:37:41
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677879463);
+-- rows: 1
+-- takes: 12.089 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-03 22:37:43
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 21.462 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 23:44:30
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677883472);
+-- rows: 1
+-- takes: 51.908 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-03 23:44:32
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.260 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-03 23:47:43
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677883664);
+-- rows: 1
+-- takes: 19.531 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-03 23:47:45
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 20.476 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-04 18:01:42
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677949303);
+-- rows: 1
+-- takes: 20.523 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-04 18:01:44
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.571 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-04 18:54:09
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677952451);
+-- rows: 1
+-- takes: 13.716 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-04 18:54:11
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.226 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-04 19:00:46
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677952847);
+-- rows: 1
+-- takes: 14.387 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-04 19:00:47
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.588 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:38
+-- driver: sqlite/
+-- 2023-03-04 19:07:07
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677953228);
+-- rows: 1
+-- takes: 16.013 ms
+-- source: /var/www/html/app/BotModule/Loggers/SqliteLogger.php:46
+-- driver: sqlite/
+-- 2023-03-04 19:07:08
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.527 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:42
+-- driver: sqlite/
+-- 2023-03-05 01:30:25
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677976227);
+-- rows: 1
+-- takes: 13.250 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:50
+-- driver: sqlite/
+-- 2023-03-05 01:30:27
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.217 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:40
+-- driver: sqlite/
+-- 2023-03-05 01:32:22
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677976344);
+-- rows: 1
+-- takes: 15.408 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:48
+-- driver: sqlite/
+-- 2023-03-05 01:32:24
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 9.852 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:41
+-- driver: sqlite/Action
+-- 2023-03-05 01:32:50
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677976371);
+-- rows: 1
+-- takes: 13.707 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:49
+-- driver: sqlite/Action
+-- 2023-03-05 01:32:51
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.148 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:41
+-- driver: sqlite/Decision
+-- 2023-03-05 01:34:09
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677976451);
+-- rows: 1
+-- takes: 14.397 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:49
+-- driver: sqlite/Decision
+-- 2023-03-05 01:34:11
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.173 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:41
+-- driver: sqlite/Decision
+-- 2023-03-05 01:42:57
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677976978);
+-- rows: 1
+-- takes: 13.031 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:49
+-- driver: sqlite/Decision
+-- 2023-03-05 01:42:58
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 22.504 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:42
+-- driver: sqlite/decision
+-- 2023-03-05 01:44:48
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977089);
+-- rows: 1
+-- takes: 17.209 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:50
+-- driver: sqlite/decision
+-- 2023-03-05 01:44:49
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.305 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:42
+-- driver: sqlite/Decision
+-- 2023-03-05 01:45:11
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977112);
+-- rows: 1
+-- takes: 12.557 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:50
+-- driver: sqlite/Decision
+-- 2023-03-05 01:45:12
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 14.715 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:25
+-- driver: sqlite/Decision
+-- 2023-03-05 01:45:51
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977152);
+-- rows: 1
+-- takes: 13.329 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:33
+-- driver: sqlite/Decision
+-- 2023-03-05 01:45:52
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.103 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:22
+-- driver: sqlite/Decision
+-- 2023-03-05 01:47:14
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977235);
+-- rows: 1
+-- takes: 11.724 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:30
+-- driver: sqlite/Decision
+-- 2023-03-05 01:47:15
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 16.510 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:22
+-- driver: sqlite/Decision
+-- 2023-03-05 01:47:24
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977245);
+-- rows: 1
+-- takes: 12.452 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:30
+-- driver: sqlite/Decision
+-- 2023-03-05 01:47:25
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 13.670 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:20
+-- driver: sqlite/Decision
+-- 2023-03-05 01:50:58
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977459);
+-- rows: 1
+-- takes: 12.760 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:27
+-- driver: sqlite/Decision
+-- 2023-03-05 01:50:59
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.889 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:19
+-- driver: sqlite/Decision
+-- 2023-03-05 01:56:50
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677977811);
+-- rows: 1
+-- takes: 12.838 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:26
+-- driver: sqlite/Decision
+-- 2023-03-05 01:56:51
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 12.810 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:19
+-- driver: sqlite/Decision
+-- 2023-03-05 02:03:24
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677978205);
+-- rows: 1
+-- takes: 15.461 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:26
+-- driver: sqlite/Decision
+-- 2023-03-05 02:03:25
+
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 23.345 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:19
+-- driver: sqlite/Decision
+-- 2023-03-05 02:11:20
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1677978682);
+-- rows: 1
+-- takes: 14.349 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:26
+-- driver: sqlite/Decision
+-- 2023-03-05 02:11:22
+

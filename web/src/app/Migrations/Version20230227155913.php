@@ -1,0 +1,43 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Alfred\App\Migrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20230227155913 extends AbstractMigration
+{
+    public function getDescription(): string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema): void
+    {
+        $table = $schema->getTable('request');
+
+        $table->addColumn('priority', Types::INTEGER)
+            ->setComment('Priority');
+
+        $table->addColumn('aggressiveness', Types::INTEGER)
+            ->setComment('Aggressiveness');
+
+        $table->addColumn('isActive', Types::BOOLEAN)
+            ->setComment('Is active?');
+
+        $table->addColumn('isExplicit', Types::BOOLEAN)
+            ->setComment('Is explicit?');
+    }
+
+    public function down(Schema $schema): void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+
+    }
+}

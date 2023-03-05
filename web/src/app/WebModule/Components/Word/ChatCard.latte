@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+    Požadavky
+
+    {*{control quickAddCategory}*}
+    </div>
+
+    {snippet requests}
+    <div class="card-body">
+        {foreach $chats as $chat}
+            {foreach $events as $event}
+
+                <div n:if="$isActive[$chat->id][$event->id]">
+                    <a href="{link delete!, $word->id, $chat->id, $event->id}" class="ajax badge badge-primary">{$event->name}/{$chat->name}</a>
+                </div>
+                <div n:if="!$isActive[$chat->id][$event->id]">
+                    <a href="{link add!, $word->id, $chat->id, $event->id}" class="ajax badge badge-secondary">{$event->name}/{$chat->name}</a>
+                </div>
+            {/foreach}
+        {/foreach}
+    </div>
+    {/snippet}
+</div>
+
+
+
+

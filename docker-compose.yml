@@ -1,0 +1,58 @@
+version: '3'
+services:
+  alfred-web:
+    image: actency/docker-apache-php:8.0.1
+    ports:
+      - "9080:80"
+    environment:
+      - SERVERNAME=alfred.test
+      - SERVERALIAS=example2.local *.example2.local
+      - DOCUMENTROOT=www
+    volumes:
+      - ./web/src/:/var/www/html/
+      #- /home/docker/.ssh/:/var/www/.ssh/
+    links:
+      - alfred-database
+    depends_on:
+      - alfred-database
+    tty: true
+
+  alfred-database:
+    image: actency/docker-mysql:5.7
+    ports:
+      - "4306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - MYSQL_DATABASE=example
+      - MYSQL_USER=example_user
+      - MYSQL_PASSWORD=mysqlpwd
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+
+  alfred-phpmyadmin:
+    image: actency/docker-phpmyadmin
+    ports:
+      - "9081:80"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - UPLOAD_SIZE=1G
+    links:
+      - alfred-database
+    depends_on:
+      - alfred-database
+
+  alfred-adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9082:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: alfred-database
+    links:
+      - alfred-database
+    depends_on:
+      - alfred-database
+
+networks:
+  shared:
+    external: false

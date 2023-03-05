@@ -1,0 +1,37 @@
+parameters:
+    logDir: %appDir%/../log
+
+    database:
+        decisionConnection:
+            driver: sqlite
+            database: %logDir%/decision.sqlite
+            username: root
+            password: ""
+            profiler:
+                file: file.log
+
+services:
+    DecisionConnection: Alfred\App\BotModule\Connections\DecisionConnection(%database.decisionConnection%, "Decision")
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: Alfred\App\*Module\Presenters\*Presenter
+
+session:
+	expiration: 14 days
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+extensions:
+    dibi: Dibi\Bridges\Nette\DibiExtension22
+    console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+    formMapper: FreezyBee\DoctrineFormMapper\DI\FormMapperExtension
+
+includes:
+    - doctrine.neon
+    - services.neon
+    - telegram.neon

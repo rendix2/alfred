@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">Odpovědi</div>
+    <div class="card-body">
+        {snippet responses}
+        <table class="table table-hover table-striped table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Text</th>
+                    <th>Anketa</th>
+                    <th>Gif</th>
+                    <th>Poloha</th>
+                    <th>Přirazeno?</th>
+                </tr>
+            </thead>
+            <tboody>
+                {foreach $responses as $response}
+                <tr>
+                    <td>{$response->id}</td>
+                    <td>{$response?->answer?->answerText}</td>
+                    <td>{$response?->poll?->question}</td>
+                    <td>
+                        {if $response->gif}
+                        <img src="{$response?->gif?->url}" style="width:64px;height:64px;">
+                        {/if}
+                    </td>
+                    <td>{$response?->location?->name}</td>
+                    <td>
+                        {if in_array($response->id, $assignedResponses, true)}
+                        <a href="{link delete!, $request->id, $response->id}" class="ajax">Odebrat</a>
+                        {else}
+                        <a href="{link add!, $request->id, $response->id}" class="ajax">Přidat</a>
+                        {/if}
+                    </td>
+                <tr>
+                {/foreach}
+            </tbody>
+        </table>
+        {/snippet}
+    </div>
+</div>
