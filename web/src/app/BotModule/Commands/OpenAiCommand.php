@@ -2,7 +2,6 @@
 
 namespace Alfred\App\BotModule\Commands;
 
-use Commands\AICommand;
 use Nette\Utils\Json;
 use Orhanerday\OpenAi\OpenAi;
 use Telegram\Bot\Commands\Command;
@@ -17,12 +16,12 @@ class OpenAiCommand extends Command
     protected $name = 'ai';
     protected $description = 'Command to communicate with open AI';
     protected $usage = '/ai';
-    protected $version = '1.0.1';
+    protected $version = '1.0.2';
+    protected $pattern = '{query}';
 
     public function __construct(
         private OpenAi $ai,
-    )
-    {
+    ) {
     }
 
     public static function getDisabledWords() : array
@@ -34,8 +33,9 @@ class OpenAiCommand extends Command
 
     public function handle()
     {
-        $arguments = $this->getArguments()[0];
-        $lowerArguments = mb_strtolower($arguments);
+        $this->parseCommandArguments();
+        $arguments = $this->getArguments();
+        $query = $arguments['query'];
 
         foreach (static::getDisabledWords() as $word) {
             if (preg_match('#' . $word . '#', $lowerArguments)) {
@@ -50,7 +50,7 @@ class OpenAiCommand extends Command
         $aiResult = $this->ai->completion(
             [
                 'model' => 'text-davinci-003',
-                'prompt' => $arguments,
+                'prompt' => $query,
                 'temperature' => 0.5,
                 'max_tokens' => 150,
                 'top_p' => 0.3,
@@ -63,7 +63,7 @@ class OpenAiCommand extends Command
         $responseText = $aiResultDecoded->choices[0]->text;
 
         $responseData = [
-            'text' => $responseText
+            'text' => $responseText,
         ];
 
         return $this->replyWithMessage($responseData);

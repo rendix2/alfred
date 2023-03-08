@@ -271,6 +271,6 @@ class RequestPresenter extends Presenter
 
     public function createComponentResponseCard() : ResponseCard
     {
-        return new ResponseCard($this->em, $this->doctrineFormMapper, $this->requestEntity);
+        return new ResponseCard($this->em, $this->requestEntity);
     }
 }

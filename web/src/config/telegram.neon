@@ -5,8 +5,10 @@ services:
             - addCommand(@OpenAICommand)
             - addCommand(@VersionCommand)
             - addCommand(@WeatherCommand)
+            - addCommand(@HelpCommand)
             - commandsHandler(true)
 
     VersionCommand: Alfred\App\BotModule\Commands\VersionCommand
     OpenAICommand: Alfred\App\BotModule\Commands\OpenAiCommand
     WeatherCommand: Alfred\App\BotModule\Commands\WeatherCommand
+    HelpCommand: Telegram\Bot\Commands\HelpCommand

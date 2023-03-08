@@ -1,5 +1,6 @@
 parameters:
     logDir: %appDir%/../log
+    web: http://alfred.borec.cz
 
     database:
         decisionConnection:
@@ -8,7 +9,7 @@ parameters:
             username: root
             password: ""
             profiler:
-                file: file.log
+                file: %logDir%/queryLog.log
 
 services:
     DecisionConnection: Alfred\App\BotModule\Connections\DecisionConnection(%database.decisionConnection%, "Decision")

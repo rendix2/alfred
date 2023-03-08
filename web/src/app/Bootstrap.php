@@ -38,7 +38,7 @@ class Bootstrap
 
         $commonNeonPath = $appDir . '/config/common.neon';
         $localNeonPath = $appDir . '/config/local.neon';
-        $prodNeonPath = $appDir  . '/config/prod.neon';
+        $prodNeonPath = $appDir  . '/config/production.neon';
 
         if (file_exists($commonNeonPath)) {
             $configurator->addConfig($commonNeonPath);
@@ -51,7 +51,7 @@ class Bootstrap
         } elseif (file_exists($prodNeonPath)) {
             $configurator->addConfig($prodNeonPath);
         } else {
-            $message = sprintf('Local.neon or prod.nenon is missing.');
+            $message = sprintf('Local.neon or production.neon is missing.');
             throw new Exception($message);
         }
 

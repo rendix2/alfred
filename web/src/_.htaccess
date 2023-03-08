@@ -1,0 +1,15 @@
+
+RewriteEngine on
+
+#RewriteBase /
+
+RewriteRule ^www$ / [R=301,L]
+RewriteRule ^www/(.*) /$1 [R=301,L]
+RewriteRule ^/www$ / [R=301,L]
+RewriteRule ^/www/(.*) /$1 [R=301,L]
+
+RewriteRule ^$ /www/index.php [L]
+
+
+RewriteCond %{REQUEST_URI} !sys/
+RewriteRule (.+) /www/$1 [L]

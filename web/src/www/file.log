@@ -1246,3 +1246,16 @@ OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní
 -- driver: sqlite/Decision
 -- 2023-03-05 02:11:22
 
+OK: CREATE TABLE IF NOT EXISTS logs (log JSON NOT NULL, date DATETIME NOT NULL);
+-- takes: 19.791 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:19
+-- driver: sqlite/Decision
+-- 2023-03-05 22:36:10
+
+OK: INSERT INTO [logs] ([log], [date]) VALUES ('{"chat":{"id":1,"name":"Okultní jelita","telegramId":-1001525276996},"event":{"id":1,"name":"General","description":"Obecná událost běžící furt"},"user":1,"possibleRequests":[4],"selectedRequest":4,"possibleResponses":[1],"selectedResponse":1,"responseStrategy":"Alfred\\App\\BotModule\\ResponseStrategies\\KrakenStrategy"}', 1678052174);
+-- rows: 1
+-- takes: 17.755 ms
+-- source: /var/www/html/app/BotModule/Loggers/Decision/SqliteLogger.php:26
+-- driver: sqlite/Decision
+-- 2023-03-05 22:36:14
+

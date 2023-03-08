@@ -3,6 +3,7 @@
 namespace Alfred\App\BotModule\ResponseStrategies;
 
 use Alfred\App\Model\Entity\ResponseEntity;
+use Telegram\Bot\Objects\Message;
 
 /**
  * class IResponseStrategy
@@ -11,5 +12,5 @@ use Alfred\App\Model\Entity\ResponseEntity;
  */
 interface IResponseStrategy
 {
-    public function run() : ?ResponseEntity;
+    public function run(Message $message) : ?ResponseEntity;
 }

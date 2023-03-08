@@ -12,6 +12,7 @@ use Alfred\App\Model\Entity\ResponseHistoryEntity;
 use Alfred\App\Model\Entity\WordEntity;
 use DateTime;
 use Nettrine\ORM\EntityManagerDecorator;
+use Telegram\Bot\Objects\Message;
 
 /**
  * class YloandaStrategy
@@ -26,13 +27,14 @@ class YolandaStrategy implements IResponseStrategy
     ) {
     }
 
-    public function run(/*Message $message*/) : ?ResponseEntity
+    public function run(Message $message) : ?ResponseEntity
     {
-        //$chatId = $message->getChat()->getId();
-        //$text = $message->getText();
-        $chatId = -1001525276996; // okultní jelita
-        $message = 'Dobré ráno pracanti';
-        $explodedWords = explode(' ', $message);
+        $chatId = $message->getChat()->getId();
+        $text = $message->getText();
+        /*
+                $chatId = -1001525276996; // okultní jelita
+                $message = 'Dobré ráno pracanti';*/
+        $explodedWords = explode(' ', $text);
 
         $chat = $this->em
             ->getRepository(ChatEntity::class)

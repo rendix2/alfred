@@ -15,6 +15,7 @@ use DateInterval;
 use DateTime;
 use Nettrine\ORM\EntityManagerDecorator;
 use Telegram\Bot\Objects\Message;
+use Tracy\Debugger;
 
 /**
  * class KrakenStrategy
@@ -30,14 +31,11 @@ class KrakenStrategy implements IResponseStrategy
     ) {
     }
 
-    public function run(/*Message $message*/) : ?ResponseEntity
+    public function run(Message $message) : ?ResponseEntity
     {
-        //$chatId = $message->getChat()->getId();
-        //$text = $message->getText();
-        $chatId = -1001525276996; // okultní jelita
-        $message = 'Dobré ráno pracanti kurvy babiš bašta auta';
-        //$user = $message->getFrom();
-        $user = 1;
+        $chatId = $message->getChat()->getId();
+        $messageText = $message->getText();
+        $user = $message->getFrom();
 
         $chat = $this->em
             ->getRepository(ChatEntity::class)
@@ -48,15 +46,15 @@ class KrakenStrategy implements IResponseStrategy
             );
 
         if (!$chat) {
-            $message = sprintf('Chat [%d] not found.', $chatId);
+            $errorMessage = sprintf('Chat [%s] not found.', $chatId);
 
-            throw new AlfredException($message);
+            throw new AlfredException($errorMessage);
         }
 
         if (!$chat->isActive) {
-            $message = sprintf('Chat [%d] [%s] is not active.', $chatId, $chat->name);
+            $errorMessage = sprintf('Chat [%d] [%s] is not active.', $chatId, $chat->name);
 
-            throw new AlfredException($message);
+            throw new AlfredException($errorMessage);
         }
 
         $activeEvents = $this->em
@@ -83,7 +81,7 @@ class KrakenStrategy implements IResponseStrategy
         foreach ($allWords as $allWord) {
             $pattern = "~" . str_replace(" ", "\s+", $allWord->wordText) . "~msiu";
 
-            if (preg_match($pattern, $message)) {
+            if (preg_match($pattern, $messageText)) {
                 $matchedWords[] = $allWord;
             }
         }
@@ -180,11 +178,16 @@ class KrakenStrategy implements IResponseStrategy
 
         $requestsWithResponse = [];
 
+        $logRequest = [];
+
         foreach ($requests as $request) {
             if (count($request->responses)) {
                 $requestsWithResponse[$request->id] = $request;
+                $logRequest[$request->id] = $request->id;
             }
         }
+
+        Debugger::log($logRequest);
 
         $assocRequests = [];
         $groupByPriorityRequests = [];
@@ -206,8 +209,20 @@ class KrakenStrategy implements IResponseStrategy
             }
         }
 
-        $possibleRequestIds = array_keys($groupByPriorityRequests[$biggestRequestGroupKey]);
-        $selectedRequestId  = array_rand($groupByPriorityRequests[$biggestRequestGroupKey]);
+        if ($biggestRequestGroupKey === null) {
+            if (count($assocRequests)) {
+                $selectedRequestId = array_rand($assocRequests);
+                $possibleRequestIds = array_keys($assocRequests);
+            } else {
+                Debugger::log('NO RESPONSE');
+                return null;
+            }
+        } else {
+            $possibleRequestIds = array_keys(
+                $groupByPriorityRequests[$biggestRequestGroupKey]
+            );
+            $selectedRequestId = array_rand($groupByPriorityRequests[$biggestRequestGroupKey]);
+        }
 
         $selectedRequest = $assocRequests[$selectedRequestId];
 
@@ -216,7 +231,7 @@ class KrakenStrategy implements IResponseStrategy
 
         /**
          * @var ResponseEntity[] $possibleResponses
-         * @var ResponseEntity $response
+         * @var ResponseEntity   $response
          */
         foreach ($selectedRequest->responses as $response) {
             if ($response->isActive) {
@@ -238,7 +253,7 @@ class KrakenStrategy implements IResponseStrategy
         }
 
         $possibleResponsesIds = array_keys($groupByPriorityResponses[$biggestResponseGroupKey]);
-        $selectedResponseId   = array_rand($groupByPriorityResponses[$biggestResponseGroupKey]);
+        $selectedResponseId = array_rand($groupByPriorityResponses[$biggestResponseGroupKey]);
 
         $selectedResponse = $possibleResponses[$selectedResponseId];
 

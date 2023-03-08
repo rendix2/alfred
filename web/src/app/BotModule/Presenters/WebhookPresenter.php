@@ -12,21 +12,18 @@ use Telegram\Bot\Api as TelegramApi;
  */
 class WebhookPresenter extends Presenter
 {
-    private TelegramApi $telegramApi;
-
-    /**
-     * @param TelegramApi $telegramApi
+    /** @param TelegramApi $telegramApi
      */
-    public function __construct(TelegramApi $telegramApi)
-    {
-        $this->telegramApi = $telegramApi;
+    public function __construct(
+        private TelegramApi $telegramApi,
+    ) {
     }
 
     public function actionSet() : void
     {
         $result = $this->telegramApi->setWebhook(
             [
-                'url' => 'https://back.komunitnicentrum.eu/bot.bot/chat',
+                'url' => $this->link('//:Bot:Bot:Default'),
                 'drop_pending_updates' => true
             ]
         );

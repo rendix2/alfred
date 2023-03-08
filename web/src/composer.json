@@ -10,7 +10,6 @@
 		"ext-json": "*",
 		"ext-mbstring": "*",
 		"ext-sqlite3": "*",
-		"ext-zend opcache": "*",
 
 		"nette/application": "^3.1",
 		"nette/bootstrap": "^3.1",
@@ -41,10 +40,12 @@
 		"ifsnop/mysqldump-php": "^2.9",
 		"symfony/cache": "^6.0",
 		"irazasyed/telegram-bot-sdk": "^3.9",
-		"guzzlehttp/guzzle": "^7.4",
+		"guzzlehttp/guzzle": "^7.5",
 		"freezy-bee/doctrine-form-mapper": "^1.5",
+		"orhanerday/open-ai": "^3.5",
 		"ublaboo/datagrid": "^6.9",
-		"orhanerday/open-ai": "^3.5"
+		"dg/ftp-deployment": "^3.6"
+
 	},
 	"require-dev": {
 		"nette/tester": "^2.3",

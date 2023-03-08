@@ -6,6 +6,7 @@ use Alfred\App\BotModule\ResponseStrategies\IResponseStrategy;
 use Alfred\App\Model\Entity\ChatEntity;
 use Alfred\App\Model\Entity\EventEntity;
 use DateTime;
+use Telegram\Bot\Objects\User;
 
 /**
  * class Logger
@@ -19,7 +20,7 @@ abstract class Logger
 
     private EventEntity $event;
 
-    private int $user;
+    private User $user;
 
     private array $possibleRequests;
 
@@ -94,9 +95,9 @@ abstract class Logger
     }
 
     /**
-     * @param int $user
+     * @param User $user
      */
-    public function setUser(int $user) : void
+    public function setUser(User $user) : void
     {
         $this->user = $user;
     }
@@ -196,7 +197,9 @@ abstract class Logger
                 'name' => $this->event->name,
                 'description' => $this->event->description,
             ],
-            'user' => $this->user,
+            'user' => [
+                'id' => $this->user->id,
+            ],
 
             'possibleRequests' => $this->possibleRequests,
             'selectedRequest' => $this->selectedRequest,

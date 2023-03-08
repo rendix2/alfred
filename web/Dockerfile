@@ -6,7 +6,7 @@
 FROM php:8.0.1-apache
 
 # Install tools
-RUN apt-get clean && apt-get update && apt-get install --fix-missing wget apt-transport-https lsb-release ca-certificates gnupg2 -y
+RUN apt-get clean && apt-get update && apt-get install --fix-missing wget apt-transport-https lsb-release ca-certificates gnupg2 libssh2-1-dev libssh2-1 -y
 RUN apt-get clean && apt-get update && apt-get install --fix-missing -y \
   ruby-dev \
   rubygems \
@@ -94,6 +94,45 @@ RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install ldap
 RUN docker-php-ext-install iconv
 RUN docker-php-ext-install tokenizer
+
+#RUN apt-get update && apt-get install -y \
+#    ssh \
+#    libssh2-1 \
+#    libssh2-1-dev \
+#    wget \
+#    libssl-dev \
+#    && apt-get clean \
+#    && rm -rf /var/lib/apt/lists/*
+#
+## Install ssh2 extension
+#RUN wget -O libssh2.tar.gz https://www.libssh2.org/download/libssh2-1.8.1.tar.gz \
+#    && wget -O ssh2.tgz https://pecl.php.net/get/ssh2-1.1.2.tgz \
+#    && mkdir libssh2 && tar vxzf libssh2.tar.gz -C libssh2 --strip-components 1 \
+#    && mkdir ssh2 && tar vxzf ssh2.tgz -C ssh2 --strip-components 1 \
+#    && cd libssh2 && ./configure \
+#    && make && make install \
+#    && cd ../ssh2 && phpize && ./configure --with-ssh2 \
+#    && make && make install \
+#    && echo "extension=ssh2.so" >> /usr/local/etc/php/conf.d/ssh2.ini \
+#    && cd ../ && rm -rf libssh2.tar.gz ssh2.tgz ssh2 libssh2
+
+
+#COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+#
+#RUN install-php-extensions ssh2
+
+#RUN apt-get install libssh2-1-dev
+#RUN pecl install ssh2-1.3.1
+#RUN docker-php-ext-enable ssh2
+
+RUN apt-get install -y libssh2-1-dev libssh2-1
+
+RUN sudo apt-get install -y libssh2-1
+RUN pecl install ssh2-1.3.1
+RUN echo 'extension=ssh2.so' | sudo tee /usr/local/etc/php/php.ini > /dev/null
+
+RUN apt-get install -y libssh2-1-dev libssh2-1 \
+    && docker-php-ext-enable ssh2
 
 # Custom Opcache
 RUN ( \
