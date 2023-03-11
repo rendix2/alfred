@@ -9,6 +9,7 @@
 	{* bootstrap *}
 	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap/dist/css/bootstrap-reboot.css">
 	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap/dist/css/bootstrap-grid.css">
 	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/happy-inputs/src/happy.css">
 	<link rel="stylesheet" type="text/css" href="{$basePath}/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
 
@@ -26,10 +27,10 @@
 
 <body>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<div class="collapse navbar-collapse" id="navbarNav">
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav">
 			<li class="nav-item active">
 				<a class="nav-link" href="{link Dashboard:default}">Dashboard</a>
@@ -103,6 +104,9 @@
 
     <script src="{$basePath}/node_modules/jquery/dist/jquery.js"></script>
 	<script src="{$basePath}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="{$basePath}/node_modules/bootstrap/js/dist/collapse.js"></script>
+	<script src="{$basePath}/node_modules/bootstrap/js/dist/util.js"></script>
+
 	<script src="{$basePath}/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
     <script src="{$basePath}/node_modules/jquery-ui-sortable/jquery-ui.min.js"></script>
     <script src="{$basePath}/node_modules/naja/dist/Naja.js"></script>
