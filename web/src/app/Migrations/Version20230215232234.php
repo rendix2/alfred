@@ -36,7 +36,7 @@ final class Version20230215232234 extends AbstractMigration
         $table->addForeignKeyConstraint($schema->getTable('request'), ['requestId'], ['id'], name: 'FK_Request2response_RequestId');
         $table->addForeignKeyConstraint($schema->getTable('response'), ['responseId'], ['id'], name: 'FK_Request2response_responseId');
 
-        $table->setComment('Requests of Responses');
+        $table->setComment('Responses of Requests');
 
     }
 

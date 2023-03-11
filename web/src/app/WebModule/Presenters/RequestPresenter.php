@@ -2,19 +2,15 @@
 
 namespace Alfred\App\WebModule\Presenters;
 
-use Alfred\App\Model\Entity\ChatEntity;
-use Alfred\App\Model\Entity\EventEntity;
 use Alfred\App\Model\Entity\RequestEntity;
-use Alfred\App\Model\Entity\WordEntity;
 use Alfred\App\WebModule\Components\Request\ResponseCard;
+use Alfred\App\WebModule\Forms\RequestForm;
+use Alfred\App\WebModule\Grids\RequestGrid;
 use Doctrine\DBAL\Exception as DbalException;
-use Doctrine\ORM\QueryBuilder;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
-use FreezyBee\DoctrineFormMapper\IComponentMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
 use Nettrine\ORM\EntityManagerDecorator;
-use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
 use Ublaboo\DataGrid\DataGrid;
 
 /**
@@ -29,6 +25,8 @@ class RequestPresenter extends Presenter
     public function __construct(
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
+        private RequestForm            $requestForm,
+        private RequestGrid            $requestGrid,
     ) {
 
     }
@@ -82,166 +80,22 @@ class RequestPresenter extends Presenter
 
     public function createComponentGrid(string $name) : DataGrid
     {
-        $sep = DIRECTORY_SEPARATOR;
+        $sep  = DIRECTORY_SEPARATOR;
+        $grid = $this->requestGrid->create($this, $name);
 
-        $dataSource = $this->em
-            ->getRepository(RequestEntity::class)
-            ->createQueryBuilder('_request')
-
-            ->addSelect('_word')
-            ->addSelect('_chat')
-            ->addSelect('_event')
-
-            ->innerJoin('_request.word', '_word')
-            ->innerJoin('_request.chat', '_chat')
-            ->leftJoin('_request.event', '_event');
-
-        $grid = new DataGrid($this, $name);
         $grid->setTemplateFile(__DIR__ . $sep . '..' . $sep . 'templates/Request/grid.latte');
-        $grid->setDataSource($dataSource);
-        $grid->setItemsPerPageList([10, 20, 50, 75]);
-        $grid->setDefaultPerPage(50);
-        $grid->setDefaultSort(['word' => 'ASC']);
-
-        $grid->addColumnNumber('id', 'ID')
-            ->setSortable(true)
-            ->setFilterText();
-
-        $grid->addColumnText('word', 'Slovo')
-            ->setSortable(true)
-            ->setSortableCallback(
-                function (QueryBuilder $queryBuilder, array $sort) {
-                    if (isset($sort['word'])) {
-                        $queryBuilder->orderBy('_word.wordText', $sort['word']);
-                    }
-                }
-            )
-            ->setFilterText()
-            ->setCondition(
-                function (QueryBuilder $queryBuilder, string $value)
-                {
-                    $queryBuilder->where('REGEXP(_word.wordText, :regexp) = true')
-                        ->setParameter('regexp', $value);
-                }
-            );
-
-        $tempChats = $this->em
-            ->getRepository(ChatEntity::class)
-            ->createQueryBuilder('_chat')
-            ->getQuery()
-            ->getResult();
-
-        $chats = [null => 'Vyberte'];
-
-        foreach ($tempChats as $chat) {
-            $chats[$chat->id] = $chat->name;
-        }
-
-        $grid->addColumnText('chat', 'Chat')
-            ->setRenderer(
-                function (RequestEntity $requestEntity) {
-                    return $requestEntity?->chat?->name;
-                }
-            )
-            ->setSortable(true)
-            ->setSortableCallback(
-                function (QueryBuilder $queryBuilder, array $sort) {
-                    if (isset($sort['chat'])) {
-                        $queryBuilder->orderBy('_chat.name', $sort['chat']);
-                    }
-                }
-            )
-            ->setFilterSelect($chats);
-
-        $tempEvents = $this->em
-            ->getRepository(EventEntity::class)
-            ->createQueryBuilder('_event')
-            ->getQuery()
-            ->getResult();
-
-        $events = [null => 'Vyberte'];
-
-        foreach ($tempEvents as $event) {
-            $events[$event->id] = $event->name;
-        }
-
-        $grid->addColumnText('event', 'Událost')
-            ->setSortable(true)
-            ->setSortableCallback(
-                function (QueryBuilder $queryBuilder, array $sort) {
-                    if (isset($sort['event'])) {
-                        $queryBuilder->orderBy('_event.name', $sort['event']);
-                    }
-                }
-            )
-            ->setFilterSelect($events);
-
-        $grid->addColumnText('priority', 'Priorita')
-            ->setReplacement([1 => 'Nízká', 5 => 'Střední', 10 => 'Vysoká'])
-            ->setSortable(true)
-            ->setFilterSelect([null => 'Vyberte', 1 => 'Nízká', 5 => 'Střední', 10 => 'Vysoká']);
-
-        $grid->addColumnText('isActive', 'Aktivní?')
-            ->setSortable(true)
-            ->setReplacement([0 => 'Ne', 1 => 'Ano'])
-            ->setFilterSelect([null => 'Vyberte', 0 => 'Ne', 1 => 'Ano']);
-
-        $grid->addColumnText('isExplicit', 'Explicitní?')
-            ->setSortable(true)
-            ->setReplacement([0 => 'Ne', 1 => 'Ano'])
-            ->setFilterSelect([null => 'Vyberte', 0 => 'Ne', 1 => 'Ano']);
-
-        $grid->addAction('edit', 'Editovat')
-            ->setIcon('edit');
-
-        $grid->addAction('delete', 'Smazat', 'delete!')
-            ->setIcon('trash')
-            ->setTitle('Smazat')
-            ->setConfirmation(
-                new StringConfirmation('Opravdu chcete smazat Požadavek %d?', 'id') // Second parameter is optional
-            );
 
         return $grid;
     }
 
+    public function createComponentResponseCard() : ResponseCard
+    {
+        return new ResponseCard($this->em, $this->requestEntity);
+    }
+
     public function createComponentForm() : Form
     {
-        $form = new Form();
-
-        $form->addSelect('word', 'Slovo')
-            ->setPrompt('Vyberte Slovo')
-            ->setRequired('Slovo je povinné.')
-            ->setOption(
-                IComponentMapper::ITEMS_TITLE,
-                function (WordEntity $wordEntity) : string {
-                    return $wordEntity->wordText;
-                }
-            );
-
-        $form->addSelect('chat', 'Chat')
-            ->setPrompt('Vyberte Chat')
-            ->setRequired('Chat je povinný.')
-            ->setOption(
-                IComponentMapper::ITEMS_TITLE,
-                function (ChatEntity $chatEntity) : string {
-                    return $chatEntity->name;
-                }
-            );
-
-        $form->addSelect('event', 'Událost')
-            ->setPrompt('Vyberte Událost')
-            ->setOption(
-                IComponentMapper::ITEMS_TITLE,
-                function (EventEntity $eventEntity) : string {
-                    return $eventEntity->name;
-                }
-            );
-
-        $form->addRadioList('priority', 'Priorita', [1 => 'Nízká', 5 => 'Střední', 10 => 'Vysoká']);
-        $form->addCheckbox('isActive', 'Aktivní?');
-        $form->addCheckbox('isExplicit', 'Explicitní?');
-
-        $form->addSubmit('send', 'Uložit Požadavek');
+        $form = $this->requestForm->create();
 
         $this->doctrineFormMapper->load(RequestEntity::class, $form);
 
@@ -267,10 +121,5 @@ class RequestPresenter extends Presenter
 
         $this->flashMessage('Požadevek byl uložen.', 'success');
         $this->redirect('Request:default');
-    }
-
-    public function createComponentResponseCard() : ResponseCard
-    {
-        return new ResponseCard($this->em, $this->requestEntity);
     }
 }

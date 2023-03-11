@@ -3,6 +3,7 @@
 namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\AnswerEntity;
+use Alfred\App\WebModule\Forms\AnswerForm;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
@@ -21,6 +22,7 @@ class AnswerPresenter extends Presenter
     public function __construct(
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
+        private AnswerForm             $answerForm,
     ) {
 
     }
@@ -118,14 +120,7 @@ class AnswerPresenter extends Presenter
 
     public function createComponentForm() : Form
     {
-        $form = new Form();
-
-        $form->addTextArea('answerText', 'Text')
-            ->setRequired('Zadejte prosím text.');
-
-        //$form->addCheckbox('isActive', 'Aktivní?');
-
-        $form->addSubmit('send', 'Uložit Odpověď');
+        $form = $this->answerForm->create();
 
         $this->doctrineFormMapper->load(AnswerEntity::class, $form);
 
@@ -152,5 +147,4 @@ class AnswerPresenter extends Presenter
         $this->flashMessage('Odpověď byla uložena.', 'success');
         $this->redirect('Answer:default');
     }
-
 }

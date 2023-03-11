@@ -1,0 +1,11 @@
+services:
+    AnswerForm: Alfred\App\WebModule\Forms\AnswerForm
+    ChatForm: Alfred\App\WebModule\Forms\ChatForm
+    EventForm: Alfred\App\WebModule\Forms\EventForm
+    GifForm: Alfred\App\WebModule\Forms\GifForm
+    LocationForm: Alfred\App\WebModule\Forms\LocationForm
+    PollForm: Alfred\App\WebModule\Forms\PollForm
+    PollOptionForm: Alfred\App\WebModule\Forms\PollOptionForm
+    RequestForm: Alfred\App\WebModule\Forms\RequestForm
+    ResponseForm: Alfred\App\WebModule\Forms\ResponseForm
+    WordForm: Alfred\App\WebModule\Forms\WordForm

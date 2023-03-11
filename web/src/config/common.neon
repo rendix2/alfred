@@ -36,3 +36,5 @@ includes:
     - doctrine.neon
     - services.neon
     - telegram.neon
+    - forms.neon
+    - grids.neon

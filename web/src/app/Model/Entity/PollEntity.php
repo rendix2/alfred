@@ -29,10 +29,10 @@ class PollEntity
     #[Column(type: Types::INTEGER)]
     public int $id;
 
-    #[Column(type: Types::STRING)]
+    #[Column(type: Types::STRING, length: 512)]
     public string $question;
 
-    #[Column(type: Types::STRING)]
+    #[Column(type: Types::STRING, length: 255)]
     public string $type;
 
     #[Column(type: Types::BOOLEAN)]
@@ -52,5 +52,17 @@ class PollEntity
         $this->createdAt = new DateTime();
 
         $this->options = new ArrayCollection();
+    }
+
+    public function addOption(PollOptionEntity $pollOption) : void
+    {
+        $this->options->add($pollOption);
+
+        $pollOption->poll = $this;
+    }
+
+    public function removeOption(PollOptionEntity $pollOptionEntity) : void
+    {
+        $this->options->removeElement($pollOptionEntity);
     }
 }

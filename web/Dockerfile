@@ -5,9 +5,15 @@
 # Pull base image.
 FROM php:8.0.1-apache
 
-# Install tools
-RUN apt-get clean && apt-get update && apt-get install --fix-missing wget apt-transport-https lsb-release ca-certificates gnupg2 libssh2-1-dev libssh2-1 -y
-RUN apt-get clean && apt-get update && apt-get install --fix-missing -y \
+RUN apt-get clean
+RUN apt-get update
+
+RUN apt-get install --fix-missing \
+  wget \
+  apt-transport-https \
+  lsb-release \
+  ca-certificates \
+  gnupg2 \
   ruby-dev \
   rubygems \
   imagemagick \
@@ -38,10 +44,14 @@ RUN apt-get clean && apt-get update && apt-get install --fix-missing -y \
   bash-completion \
   libldap2-dev \
   libssl-dev \
-  libonig-dev
+  libonig-dev \
+  libbz2-dev \
+  rsync \
+  curl \
+  -y
 
 # postgresql-client-9.5
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && echo "deb https://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" >> /etc/apt/sources.list && apt-get update && apt-get install -y postgresql-client-11
+#RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && echo "deb https://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" >> /etc/apt/sources.list && apt-get update && apt-get install -y postgresql-client-11
 
 RUN pecl install mcrypt-1.0.4 && \
   docker-php-ext-enable mcrypt
@@ -77,62 +87,74 @@ ENV APACHE_LOCK_DIR  /var/lock/apache2
 ENV APACHE_LOG_DIR   /var/log/apache2
 
 # Install php extensions + added mysqli install
-RUN docker-php-ext-install opcache pdo_mysql && docker-php-ext-install mysqli
-RUN docker-php-ext-configure gd --with-jpeg
-RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
+
+RUN docker-php-ext-install bcmath
+RUN docker-php-ext-install calendar
+RUN docker-php-ext-install ctype
+RUN apt-get install libcurl4-openssl-dev
+RUN docker-php-ext-install curl
+#RUN docker-php-ext-install date
+RUN docker-php-ext-install dom
+RUN docker-php-ext-install exif
+RUN docker-php-ext-install fileinfo
+RUN docker-php-ext-install filter
+RUN docker-php-ext-install ftp
 RUN docker-php-ext-install gd
+RUN docker-php-ext-install gettext
+RUN docker-php-ext-install gmp
+#RUN docker-php-ext-install hash
+RUN docker-php-ext-install iconv
+RUN docker-php-ext-install intl
+#RUN docker-php-ext-install json
+RUN docker-php-ext-install ldap
+#RUN docker-php-ext-install libxml
 RUN docker-php-ext-install mbstring
-RUN docker-php-ext-install zip
-RUN docker-php-ext-install soap
+RUN docker-php-ext-install mysqli
+#RUN docker-php-ext-install mysqlnd
+#RUN docker-php-ext-install openssl
+RUN docker-php-ext-install pcntl
+#RUN docker-php-ext-install pcre
+RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
+
+RUN apt-get install -y libbz2-dev sqlite3 libsqlite3-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libonig-dev libreadline-dev libtidy-dev libxslt-dev libzip-dev
+RUN apt-get install libsqlite3-dev
+
+RUN docker-php-ext-install pdo_sqlite
+RUN docker-php-ext-install phar
+RUN docker-php-ext-install posix
+
+RUN apt-get update
+#RUN apt-get install libedit
+
+#RUN docker-php-ext-install readline
+#RUN docker-php-ext-install reflection
+RUN docker-php-ext-install session
+RUN docker-php-ext-install simplexml
+RUN docker-php-ext-install soap
+RUN docker-php-ext-install sockets
+
+RUN apt install libsodium-dev
+
+RUN docker-php-ext-install sodium
+#RUN docker-php-ext-install spl
+#RUN docker-php-ext-install sqlite3
+
+#RUN apt-get install libargon2 libargon2-devel
+
+#RUN docker-php-ext-install standard
+RUN docker-php-ext-install tidy
+RUN docker-php-ext-install tokenizer
+RUN docker-php-ext-install xml
+#RUN docker-php-ext-install xmlreader
+RUN docker-php-ext-install xmlwriter
 RUN docker-php-ext-install xsl
 RUN docker-php-ext-install opcache
-RUN docker-php-ext-install intl
-RUN docker-php-ext-install exif
-RUN docker-php-ext-install ftp
-RUN docker-php-ext-install bcmath
-RUN docker-php-ext-install ldap
-RUN docker-php-ext-install iconv
-RUN docker-php-ext-install tokenizer
+RUN docker-php-ext-install zip
+#RUN docker-php-ext-install zlib
 
-#RUN apt-get update && apt-get install -y \
-#    ssh \
-#    libssh2-1 \
-#    libssh2-1-dev \
-#    wget \
-#    libssl-dev \
-#    && apt-get clean \
-#    && rm -rf /var/lib/apt/lists/*
-#
-## Install ssh2 extension
-#RUN wget -O libssh2.tar.gz https://www.libssh2.org/download/libssh2-1.8.1.tar.gz \
-#    && wget -O ssh2.tgz https://pecl.php.net/get/ssh2-1.1.2.tgz \
-#    && mkdir libssh2 && tar vxzf libssh2.tar.gz -C libssh2 --strip-components 1 \
-#    && mkdir ssh2 && tar vxzf ssh2.tgz -C ssh2 --strip-components 1 \
-#    && cd libssh2 && ./configure \
-#    && make && make install \
-#    && cd ../ssh2 && phpize && ./configure --with-ssh2 \
-#    && make && make install \
-#    && echo "extension=ssh2.so" >> /usr/local/etc/php/conf.d/ssh2.ini \
-#    && cd ../ && rm -rf libssh2.tar.gz ssh2.tgz ssh2 libssh2
-
-
-#COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-#
-#RUN install-php-extensions ssh2
-
-#RUN apt-get install libssh2-1-dev
-#RUN pecl install ssh2-1.3.1
-#RUN docker-php-ext-enable ssh2
-
-RUN apt-get install -y libssh2-1-dev libssh2-1
-
-RUN sudo apt-get install -y libssh2-1
-RUN pecl install ssh2-1.3.1
-RUN echo 'extension=ssh2.so' | sudo tee /usr/local/etc/php/php.ini > /dev/null
-
-RUN apt-get install -y libssh2-1-dev libssh2-1 \
-    && docker-php-ext-enable ssh2
+RUN docker-php-ext-configure gd --with-jpeg
+RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/
 
 # Custom Opcache
 RUN ( \
@@ -165,7 +187,7 @@ ADD ./web/core/php-smtp.ini /usr/local/etc/php/conf.d/php-smtp.ini
 # ADD core/php-smtp.ini /usr/local/etc/php/conf.d/php-smtp.ini
 
 # Install Drupal Console for Drupal 8
-RUN curl https://drupalconsole.com/installer -L -o drupal.phar && mv drupal.phar /usr/local/bin/drupal && chmod +x /usr/local/bin/drupal
+#RUN curl https://drupalconsole.com/installer -L -o drupal.phar && mv drupal.phar /usr/local/bin/drupal && chmod +x /usr/local/bin/drupal
 
 
 RUN apt-get update
@@ -209,6 +231,10 @@ RUN echo "exec su - web" > /root/.bashrc && \
 
 # Custom php.ini
 COPY ./web/config/php.ini /usr/local/etc/php/
+
+# install npm and node.js
+RUN curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
+RUN apt-get install -y nodejs
 
 # Set and run a custom entrypoint
 COPY ./web/core/docker-entrypoint.sh /

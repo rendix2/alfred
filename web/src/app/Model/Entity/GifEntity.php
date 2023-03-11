@@ -32,8 +32,8 @@ class GifEntity
     #[Column(type: Types::TEXT, nullable: false)]
     public string $name;
 
-    #[Column(type: Types::BOOLEAN, nullable: false)]
-    public bool $isActive;
+    ##[Column(type: Types::BOOLEAN, nullable: false)]
+    #public bool $isActive;
 
     #[Column(type: Types::DATETIME_MUTABLE, nullable: false)]
     public DateTime $createdAt;

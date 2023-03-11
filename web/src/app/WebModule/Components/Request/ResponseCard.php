@@ -30,7 +30,7 @@ class ResponseCard extends Control
         $sep = DIRECTORY_SEPARATOR;
 
         $this->template->request = $this->requestEntity;
-        $responses =  $this->em->getRepository(ResponseEntity::class)->findAll();;
+        $responses = $this->em->getRepository(ResponseEntity::class)->findAll();
 
         $assignedResponses = array_column($this->requestEntity->responses->getValues(), 'id');
 

@@ -3,6 +3,7 @@
 namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\ChatEntity;
+use Alfred\App\WebModule\Forms\ChatForm;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
@@ -20,6 +21,7 @@ class ChatPresenter extends Presenter
     public function __construct(
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
+        private ChatForm               $chatForm,
     ) {
 
     }
@@ -123,17 +125,7 @@ class ChatPresenter extends Presenter
 
     public function createComponentForm() : Form
     {
-        $form = new Form();
-
-        $form->addText('name', 'Jméno')
-            ->setRequired('Zadejte prosím jméno.');
-
-        $form->addInteger('telegramId', 'Telegram ID')
-            ->setRequired('Zadejte prosím Telegram ID.');
-
-        $form->addCheckbox('isActive', 'Aktivní?');
-
-        $form->addSubmit('send', 'Uložit Chat');
+       $form = $this->chatForm->create();
 
         $this->doctrineFormMapper->load(ChatEntity::class, $form);
 

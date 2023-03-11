@@ -4,7 +4,7 @@
 use Alfred\App\Bootstrap;
 use Contributte\Console\Application;
 
-require __DIR__ . '/../app/bootstrap.php';
+require __DIR__ . '/../app/Bootstrap.php';
 require __DIR__ . '/../vendor/autoload.php';
 
 Bootstrap::boot()

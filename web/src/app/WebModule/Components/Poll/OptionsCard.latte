@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">Možnosti Ankety</div>
+        {snippet flashes}
+    	    {foreach $flashes as $flash}
+    		<div class="alert alert-{$flash->type}">{$flash->message}</div>
+    	    {/foreach}
+    	{/snippet}
+
+        <div class="card-body">
+            {snippet options}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Text</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach $poll->options as $option}
+                    <tr>
+                        <td>{$option->id}</td>
+                        <td>{$option->optionText}</td>
+                        <td>
+                            <a href="{link delete!, $poll->id, $option->id}" class="ajax">Smazat</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+            {/snippet}
+        </div>
+    </div>
+</div>

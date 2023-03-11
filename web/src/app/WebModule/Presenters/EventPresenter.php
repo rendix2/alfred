@@ -3,6 +3,7 @@
 namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\EventEntity;
+use Alfred\App\WebModule\Forms\EventForm;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
@@ -21,6 +22,7 @@ class EventPresenter extends Presenter
     public function __construct(
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
+        private EventForm              $eventForm,
     ) {
 
     }
@@ -140,18 +142,7 @@ class EventPresenter extends Presenter
 
     public function createComponentForm() : Form
     {
-        $form = new Form();
-
-        $form->addText('name', 'Jméno')
-            ->setRequired('Zadejte prosím jméno.');
-
-        $form->addTextArea('description', 'Popis')
-            ->setRequired(false)
-            ->setNullable(true);
-
-        $form->addCheckbox('isActive', 'Aktivní?');
-
-        $form->addSubmit('send', 'Uložit Událost');
+        $form = $this->eventForm->create();
 
         $this->doctrineFormMapper->load(EventEntity::class, $form);
 

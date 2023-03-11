@@ -1,0 +1,4 @@
+services:
+    GifGrid: Alfred\App\WebModule\Grids\GifGrid
+    PollGrid: Alfred\App\WebModule\Grids\PollGrid
+    RequestGrid: Alfred\App\WebModule\Grids\RequestGrid

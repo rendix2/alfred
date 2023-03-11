@@ -10,6 +10,7 @@ use Alfred\App\Model\Entity\WordEntity;
 use Alfred\App\Model\Entity\WordVariantEntity;
 use Alfred\App\WebModule\Components\Word\CategoriesCard;
 use Alfred\App\WebModule\Components\Word\ChatCard;
+use Alfred\App\WebModule\Forms\WordForm;
 use Doctrine\ORM\QueryBuilder;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
@@ -31,6 +32,7 @@ class WordPresenter extends Presenter
     public function __construct(
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
+        private WordForm               $wordForm,
     ) {
 
     }
@@ -318,19 +320,9 @@ class WordPresenter extends Presenter
 
     public function createComponentForm() : Form
     {
-        $form = new Form();
-
-        $form->addText('wordText', 'Slovo')
-            ->setRequired('Zadejte prosím slovo.');
-
-        $form->addTextArea('description', 'Popis')
-            ->setNullable(true)
-            ->setRequired(false);
-
-        $form->addSubmit('send', 'Uložit Slovo');
+        $form = $this->wordForm->create();
 
         $this->doctrineFormMapper->load(WordEntity::class, $form);
-
         $form->onSuccess[] = [$this, 'formSuccess'];
 
         return $form;
