@@ -16,10 +16,13 @@ class VersionCommand extends Command
     protected $usage = '/version';                    // Usage of your command
     protected $version = '1.0.1';                  // Version of your command
 
+    private const VERSION = "1.0.0. 'Ulkan'";
+
+
     public function handle()
     {
-        $data = [                                  // Set up the new message data
-            'text'    => "Jsem připraven vám sloužit holoto líná. Má verze je: ". VERSION . '.', // Set message to send
+        $data = [
+            'text'    => "Jsem připraven vám sloužit holoto líná. Má verze je: ". static::VERSION . '.'
         ];
 
         return $this->replyWithMessage($data);

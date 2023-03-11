@@ -3,7 +3,6 @@
 namespace Alfred\App\WebModule\Grids;
 
 use Alfred\App\Model\Entity\GifEntity;
-use Alfred\App\WebModule\Presenters\GifPresenter;
 use Nette\ComponentModel\IContainer;
 use Nettrine\ORM\EntityManagerDecorator;
 use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;

@@ -26,7 +26,7 @@ class CategoriesCard extends Control
 
     }
 
-    public function render()
+    public function render() : void
     {
         $sep = DIRECTORY_SEPARATOR;
         $template = $this->template;

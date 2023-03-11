@@ -4,7 +4,6 @@ namespace Alfred\App\BotModule\Presenters;
 
 use Alfred\App\BotModule\ResponseStrategies\KrakenStrategy;
 use Nette\Application\UI\Presenter;
-use Nette\Utils\Json;
 use Telegram\Bot\Api;
 use Telegram\Bot\FileUpload\InputFile;
 

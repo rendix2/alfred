@@ -7,7 +7,6 @@ namespace Alfred\App\Migrations;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\Migrations\AbstractMigration;
-use Doctrine\ORM\Query\AST\TypedExpression;
 
 /**
  * Auto-generated Migration: Please modify to your needs!

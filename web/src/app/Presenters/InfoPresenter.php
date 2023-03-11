@@ -12,10 +12,9 @@ use Nette\Application\UI\Presenter;
 class InfoPresenter extends Presenter
 {
 
-    public function actionDefault()
+    public function actionDefault() : void
     {
         phpinfo();
         exit();
     }
-
 }

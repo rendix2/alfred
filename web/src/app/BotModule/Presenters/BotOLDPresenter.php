@@ -5,6 +5,7 @@ namespace Alfred\App\BotModule\Presenters;
 use Alfred\App\Model\Entity\ResponseEntity;
 use Alfred\App\Model\Entity\WordEntity;
 use Alfred\App\Model\Tables;
+use DateTime;
 use dibi;
 use Dibi\Connection;
 use Dibi\Exception;
@@ -34,9 +35,13 @@ class BotOLDPresenter extends Presenter
     private GuzzleClient $client;
 
     /**
-     * @param Connection $connection
+     * @param Connection             $connection
      * @param EntityManagerDecorator $em
-     * @param TelegramApi $telegramApi
+     * @param GuzzleClient           $client
+     * @param TelegramApi            $telegramApi
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Nette\Utils\JsonException
      */
     public function __construct(
         Connection             $connection,
@@ -52,14 +57,13 @@ class BotOLDPresenter extends Presenter
         $members = $client->request('GET', 'https://back.komunitnicentrum.eu/api.member/get-all');
 
         $members = Json::decode($members->getBody()->getContents());
-        bdump($members);
     }
 
-    public function actionTest()
+    public function actionTest() : void
     {
         $testWord = 'vejplata';
 
-        $now = new \DateTime('-2hours');
+        $now = new DateTime('-2hours');
 
         $alfred = $this->connection
             ->select('*')
@@ -76,8 +80,8 @@ class BotOLDPresenter extends Presenter
 
             $alfredData = [
                 'mood' => $alfredMood,
-                'startedAt' => new \DateTime(),
-                'finishedAt' => new \DateTime('+1 day')
+                'startedAt' => new DateTime(),
+                'finishedAt' => new DateTime('+1 day')
             ];
 
             $id = $this->connection

@@ -4,6 +4,7 @@ namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\EventEntity;
 use Alfred\App\WebModule\Forms\EventForm;
+use Doctrine\DBAL\Exception as DbalExcetion;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
@@ -31,7 +32,7 @@ class EventPresenter extends Presenter
     {
     }
 
-    public function actionAdd()
+    public function actionAdd() : void
     {
     }
 
@@ -68,7 +69,7 @@ class EventPresenter extends Presenter
             } else {
                 $this->redirect('this');
             }
-        } catch (\Doctrine\DBAL\Exception $e) {
+        } catch (DbalExcetion $e) {
             $this->flashMessage($e->getMessage(), 'danger');
             $this->redrawControl('flashes');
         }

@@ -3,7 +3,6 @@
 namespace Alfred\App\Model\Entity;
 
 use Alfred\App\Model\Repository\ChatRepository;
-use Alfred\App\Model\Repository\EventRepository;
 use Alfred\App\Model\Tables;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -49,7 +48,7 @@ class ChatEntity
         $this->requests = new ArrayCollection();
     }
 
-    public function removeWord(WordEntity $wordEntity)
+    public function removeWord(WordEntity $wordEntity) : void
     {
         foreach ($this->requests as $request) {
             if ($request->word->id === $wordEntity->id) {

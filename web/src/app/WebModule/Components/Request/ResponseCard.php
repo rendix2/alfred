@@ -4,9 +4,7 @@ namespace Alfred\App\WebModule\Components\Request;
 
 use Alfred\App\Model\Entity\RequestEntity;
 use Alfred\App\Model\Entity\ResponseEntity;
-use Alfred\App\Model\Entity\WordEntity;
-use Doctrine\DBAL\Exception;
-use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
+use Doctrine\DBAL\Exception as DbalException;
 use Nette\Application\UI\Control;
 use Nettrine\ORM\EntityManagerDecorator;
 
@@ -72,7 +70,7 @@ class ResponseCard extends Control
             $this->em->flush();
 
             $this->flashMessage('Odpověď byla přidána.', 'success');
-        } catch (Exception) {
+        } catch (DbalException) {
             $this->flashMessage('Odpověď se nepodařilo přidat.', 'danger');
         }
 
@@ -80,7 +78,7 @@ class ResponseCard extends Control
         $this->redrawControl('flashes');
     }
 
-    public function handleDelete(int $requestId, int $responseId)
+    public function handleDelete(int $requestId, int $responseId) : void
     {
         if (!$this->presenter->isAjax()) {
             $this->presenter->redirect('Request:edit', $requestId);
@@ -111,7 +109,7 @@ class ResponseCard extends Control
             $this->em->flush();
 
             $this->flashMessage('Odpověď byla smazána.', 'success');
-        } catch (Exception $e) {
+        } catch (DbalException $e) {
             $this->flashMessage('Odpověď se nepodařilo smazat.', 'danger');
         }
 

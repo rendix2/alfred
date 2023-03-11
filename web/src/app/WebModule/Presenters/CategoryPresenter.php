@@ -3,6 +3,7 @@
 namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\CategoryEntity;
+use Doctrine\DBAL\Exception as DbalException;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use FreezyBee\DoctrineFormMapper\IComponentMapper;
 use Nette\Application\UI\Form;
@@ -67,7 +68,7 @@ class CategoryPresenter extends Presenter
             } else {
                 $this->redirect('this');
             }
-        } catch (\Doctrine\DBAL\Exception $e) {
+        } catch (DbalException $e) {
             $this->flashMessage($e->getMessage(), 'danger');
             $this->redrawControl('flashes');
         }

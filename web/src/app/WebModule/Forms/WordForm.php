@@ -2,9 +2,7 @@
 
 namespace Alfred\App\WebModule\Forms;
 
-use Alfred\App\Model\Entity\WordEntity;
 use Contributte\FormsBootstrap\BootstrapForm;
-use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 
 /**

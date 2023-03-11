@@ -3,7 +3,6 @@
 namespace Alfred\App\Model\Entity;
 
 use Alfred\App\Model\Repository\PollOptionRepository;
-use Alfred\App\Model\Repository\PollRepository;
 use Alfred\App\Model\Tables;
 use DateTime;
 use Doctrine\DBAL\Types\Types;

@@ -6,6 +6,7 @@ use Alfred\App\BotModule\ResponseStrategies\IResponseStrategy;
 use Alfred\App\Model\Entity\ChatEntity;
 use Alfred\App\Model\Entity\EventEntity;
 use DateTime;
+use JetBrains\PhpStorm\ArrayShape;
 use Telegram\Bot\Objects\User;
 
 /**
@@ -184,6 +185,18 @@ abstract class Logger
 
     abstract public function addToLog();
 
+    #[ArrayShape(
+        [
+            'chat' => "array",
+            'event' => "array",
+            'user' => "array",
+            'possibleRequests' => "array",
+            'selectedRequest' => "int",
+            'possibleResponses' => "array",
+            'selectedResponse' => "int",
+            'responseStrategy' => "string"
+        ]
+    )]
     public function createLog() : array
     {
         return [

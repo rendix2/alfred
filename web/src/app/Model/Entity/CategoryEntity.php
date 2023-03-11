@@ -64,16 +64,16 @@ class CategoryEntity
     #[PreUpdate()]
     public function preUpdate(): void
     {
-        $this->updatedAt = new \DateTime();
+        $this->updatedAt = new DateTime();
     }
 
-    public function addWord(WordEntity $wordEntity)
+    public function addWord(WordEntity $wordEntity) : void
     {
         $this->words->add($wordEntity);
         $wordEntity->categories->add($this);
     }
 
-    public function removeWord(WordEntity $wordEntity)
+    public function removeWord(WordEntity $wordEntity) : void
     {
         $this->words->removeElement($wordEntity);
         $wordEntity->categories->removeElement($this);

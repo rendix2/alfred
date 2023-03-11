@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Alfred\App\Migrations;
 
-use Dibi\Type;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\Migrations\AbstractMigration;

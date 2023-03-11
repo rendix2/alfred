@@ -7,7 +7,6 @@ use Alfred\App\Model\Entity\EventEntity;
 use Alfred\App\Model\Entity\RequestEntity;
 use Alfred\App\Model\Entity\WordEntity;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
-use http\Env\Request;
 use Nette\Application\UI\Control;
 use Nettrine\ORM\EntityManagerDecorator;
 
@@ -28,12 +27,10 @@ class ChatCard extends Control
 
     }
 
-    public function render()
+    public function render() : void
     {
         $sep = DIRECTORY_SEPARATOR;
-        $template = $this->template;
 
-        $template->word = $this->word;
         $chats = $this->em->getRepository(ChatEntity::class)->findAll();
         $events = $this->em->getRepository(EventEntity::class)->findAll();
         $requests = $this->em->getRepository(RequestEntity::class)->findBy(['word' => $this->word]);
@@ -52,13 +49,13 @@ class ChatCard extends Control
             }
         }
 
+        $this->template->word = $this->word;
         $this->template->chats = $chats;
         $this->template->events = $events;
         $this->template->isActive = $result;
 
-
-        $template->setFile(__DIR__ . $sep . 'ChatCard.latte');
-        $template->render();
+        $this->template->setFile(__DIR__ . $sep . 'ChatCard.latte');
+        $this->template->render();
     }
 
     public function handleAdd(int $wordId, int $chatId, int $eventId) : void

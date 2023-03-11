@@ -49,7 +49,7 @@ class AnswerEntity
     #[PreUpdate()]
     public function preUpdate(): void
     {
-        $this->updatedAt = new \DateTime();
+        $this->updatedAt = new DateTime();
     }
 
 }

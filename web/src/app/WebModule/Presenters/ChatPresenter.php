@@ -4,6 +4,7 @@ namespace Alfred\App\WebModule\Presenters;
 
 use Alfred\App\Model\Entity\ChatEntity;
 use Alfred\App\WebModule\Forms\ChatForm;
+use Doctrine\DBAL\Exception as DbalException;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
@@ -68,7 +69,7 @@ class ChatPresenter extends Presenter
             } else {
                 $this->redirect('this');
             }
-        } catch (\Doctrine\DBAL\Exception $e) {
+        } catch (DbalException $e) {
             $this->flashMessage($e->getMessage(), 'danger');
             $this->redrawControl('flashes');
         }

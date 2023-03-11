@@ -38,7 +38,7 @@ class OpenAiCommand extends Command
         $query = $arguments['query'];
 
         foreach (static::getDisabledWords() as $word) {
-            if (preg_match('#' . $word . '#', $lowerArguments)) {
+            if (preg_match('#' . $word . '#', $query)) {
                 $responseData = [
                     'text' => 'Jejda. Něco se pokazilo. Náš tým odborníků se na to dříve nebo později podívá. Slibujeme, protože slibem nezarmoutíš. Přejeme hezký den.'
                 ];

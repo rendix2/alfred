@@ -11,6 +11,7 @@ use Alfred\App\Model\Entity\WordVariantEntity;
 use Alfred\App\WebModule\Components\Word\CategoriesCard;
 use Alfred\App\WebModule\Components\Word\ChatCard;
 use Alfred\App\WebModule\Forms\WordForm;
+use Doctrine\DBAL\Exception as DbalException;
 use Doctrine\ORM\QueryBuilder;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
@@ -37,7 +38,7 @@ class WordPresenter extends Presenter
 
     }
 
-    public function actionDefault()
+    public function actionDefault() : void
     {
     }
 
@@ -83,7 +84,7 @@ class WordPresenter extends Presenter
             } else {
                 $this->redirect('this');
             }
-        } catch (\Doctrine\DBAL\Exception $e) {
+        } catch (DbalException $e) {
             $this->flashMessage($e->getMessage(), 'danger');
             $this->redrawControl('flashes');
         }

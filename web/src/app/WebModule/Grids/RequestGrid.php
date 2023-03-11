@@ -25,7 +25,7 @@ class RequestGrid
 
     }
 
-    public function create(IContainer $container, string $name)
+    public function create(IContainer $container, string $name) : DataGrid
     {
         $dataSource = $this->em
             ->getRepository(RequestEntity::class)

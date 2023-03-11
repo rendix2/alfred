@@ -17,7 +17,7 @@ class WeatherCommand extends Command
     protected $version = '1.0.0';                  // Version of your command
 
 
-    public function handle()
+    public function handle() : void
     {
         // TODO: Implement handle() method.
     }

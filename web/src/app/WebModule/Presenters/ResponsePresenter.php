@@ -2,15 +2,10 @@
 
 namespace Alfred\App\WebModule\Presenters;
 
-use Alfred\App\Model\Entity\AnswerEntity;
-use Alfred\App\Model\Entity\GifEntity;
-use Alfred\App\Model\Entity\LocationEntity;
-use Alfred\App\Model\Entity\PollEntity;
 use Alfred\App\Model\Entity\ResponseEntity;
 use Alfred\App\WebModule\Forms\ResponseForm;
 use Doctrine\DBAL\Exception as DbalException;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
-use FreezyBee\DoctrineFormMapper\IComponentMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
 use Nettrine\ORM\EntityManagerDecorator;
@@ -38,9 +33,8 @@ class ResponsePresenter extends Presenter
     {
     }
 
-    public function actionAdd()
+    public function actionAdd() : void
     {
-
     }
 
     public function actionEdit(int $id) : void

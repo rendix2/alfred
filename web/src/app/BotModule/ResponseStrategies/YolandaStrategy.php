@@ -41,15 +41,15 @@ class YolandaStrategy implements IResponseStrategy
             ->findOneBy(['telegramId' => $chatId]);
 
         if (!$chat) {
-            $message = sprintf('Chat [%d] not found.', $chatId);
+            $errorMessage = sprintf('Chat [%d] not found.', $chatId);
 
-            throw new AlfredException($message);
+            throw new AlfredException($errorMessage);
         }
 
         if (!$chat->isActive) {
-            $message = sprintf('Chat [%d] [%s] is not active.', $chatId, $chat->name);
+            $errorMessage = sprintf('Chat [%d] [%s] is not active.', $chatId, $chat->name);
 
-            throw new AlfredException($message);
+            throw new AlfredException($errorMessage);
         }
 
         $activeEvents = $this->em

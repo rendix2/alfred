@@ -4,7 +4,7 @@ namespace Alfred\App\WebModule\Components\Poll;
 
 use Alfred\App\Model\Entity\PollEntity;
 use Alfred\App\Model\Entity\PollOptionEntity;
-use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Exception as DbalException;
 use Nette\Application\UI\Control;
 use Nettrine\ORM\EntityManagerDecorator;
 
@@ -24,7 +24,7 @@ class OptionsCard extends Control
 
     }
 
-    public function render()
+    public function render() : void
     {
         $sep = DIRECTORY_SEPARATOR;
 
@@ -63,7 +63,7 @@ class OptionsCard extends Control
             $this->em->flush();
 
             $this->flashMessage('Možnost Ankety byla smazána.', 'success');
-        } catch (Exception $e) {
+        } catch (DbalException $e) {
             $this->flashMessage('Možnost Ankety se nepodařilo smazat.', 'danger');
         }
 
