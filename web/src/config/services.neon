@@ -5,5 +5,4 @@ services:
     YolandaStrategy: Alfred\App\BotModule\ResponseStrategies\YolandaStrategy
     KrakenStrategy: Alfred\App\BotModule\ResponseStrategies\KrakenStrategy
 
-    SqliteLogger: Alfred\App\BotModule\Loggers\Decision\SqliteLogger
     OpenAI: Orhanerday\OpenAi\OpenAi(%openAI.apiToken%)

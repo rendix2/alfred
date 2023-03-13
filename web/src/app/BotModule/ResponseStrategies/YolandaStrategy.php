@@ -3,7 +3,7 @@
 namespace Alfred\App\BotModule\ResponseStrategies;
 
 use Alfred\App\AlfredException;
-use Alfred\App\BotModule\Loggers\Decision\Logger;
+use Alfred\App\Loggers\Decision\Logger as DecisionLogger;
 use Alfred\App\Model\Entity\ChatEntity;
 use Alfred\App\Model\Entity\EventEntity;
 use Alfred\App\Model\Entity\RequestEntity;
@@ -23,7 +23,7 @@ class YolandaStrategy implements IResponseStrategy
 {
     public function __construct(
         private EntityManagerDecorator $em,
-        private Logger                 $logger,
+        private DecisionLogger         $logger,
     ) {
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alfred\App\BotModule\Connections;
+namespace Alfred\App\Model\Connections;
 
 use Dibi\Bridges\Tracy\Panel;
 use Dibi\Connection;

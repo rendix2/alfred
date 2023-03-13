@@ -2,13 +2,17 @@
 
 namespace Alfred\App\WebModule\Presenters;
 
+use Alfred\App\Loggers\Exception\SqliteLogger as ExceptionLogger;
 use Alfred\App\Model\Entity\ChatEntity;
 use Alfred\App\WebModule\Forms\ChatForm;
+use Alfred\App\WebModule\Forms\ChatMessageForm;
 use Doctrine\DBAL\Exception as DbalException;
 use FreezyBee\DoctrineFormMapper\DoctrineFormMapper;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
 use Nettrine\ORM\EntityManagerDecorator;
+use Telegram\Bot\Api as Telegram;
+use Telegram\Bot\Exceptions\TelegramSDKException;
 use Ublaboo\DataGrid\Column\Action\Confirmation\StringConfirmation;
 use Ublaboo\DataGrid\DataGrid;
 
@@ -23,6 +27,11 @@ class ChatPresenter extends Presenter
         private EntityManagerDecorator $em,
         private DoctrineFormMapper     $doctrineFormMapper,
         private ChatForm               $chatForm,
+        private ChatMessageForm        $chatMessageForm,
+
+        private Telegram               $telegram,
+
+        private ExceptionLogger        $exceptionLogger,
     ) {
 
     }
@@ -45,6 +54,9 @@ class ChatPresenter extends Presenter
         }
 
         $this->doctrineFormMapper->load($chat, $this['form']);
+
+        $this['messageForm-chat_id']->setDisabled(true)
+            ->setValue($id);
     }
 
     public function handleDelete(int $id) : void
@@ -124,9 +136,38 @@ class ChatPresenter extends Presenter
         return $grid;
     }
 
+    public function createComponentMessageForm() : Form
+    {
+        $form = $this->chatMessageForm->create();
+
+        $form->onSuccess[] = [$this, 'messageFormSuccess'];
+
+        return $form;
+    }
+
+    public function messageFormSuccess(Form $form) : void
+    {
+        $values = $form->getValues();
+
+        try {
+            $this->telegram->sendMessage(
+                [
+                    'chat_id' => $this->getParameter('id'),
+                    'message' => $values->text,
+                    'parse_mode' => 'HTML',
+                ]
+            );
+
+            $this->flashMessage('Zpráva byla odeslána.', 'success');
+        } catch (TelegramSDKException $e) {
+            $this->flashMessage('Zprávu se nepodařilo odeslat.', 'danger');
+            $this->exceptionLogger->addToLog($e);
+        }
+    }
+
     public function createComponentForm() : Form
     {
-       $form = $this->chatForm->create();
+        $form = $this->chatForm->create();
 
         $this->doctrineFormMapper->load(ChatEntity::class, $form);
 

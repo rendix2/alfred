@@ -1,0 +1,21 @@
+parameters:
+    logDir: %appDir%/../log
+
+    database:
+        decisionConnection:
+            driver: sqlite
+            database: %logDir%/decision.sqlite
+            username: root
+            password: ""
+        exceptionConnection:
+            driver: sqlite
+            database: %logDir%/exception.sqlite
+            username: root
+            password: ""
+
+services:
+    DecisionConnection: Alfred\App\Model\Connections\DecisionConnection(%database.decisionConnection%, "Decision")
+    ExceptionConnection: Alfred\App\Model\Connections\ExceptionConnection(%database.exceptionConnection%, "Exception")
+
+    SqliteDecisionLogger: Alfred\App\Loggers\Decision\SqliteLogger
+    SqliteExceptionLogger: Alfred\App\Loggers\Exception\SqliteLogger

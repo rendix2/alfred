@@ -1,6 +1,6 @@
 <?php
 
-namespace Alfred\App\BotModule\Loggers\Decision;
+namespace Alfred\App\Loggers\Decision;
 
 use Alfred\App\BotModule\ResponseStrategies\IResponseStrategy;
 use Alfred\App\Model\Entity\ChatEntity;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Alfred\App\BotModule\Loggers\Decision;
+namespace Alfred\App\Loggers\Decision;
 
-use Alfred\App\BotModule\Connections\DecisionConnection;
+use Alfred\App\Model\Connections\DecisionConnection;
 use DateTime;
 use Nette\Utils\Json;
 

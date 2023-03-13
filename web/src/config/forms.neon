@@ -1,6 +1,7 @@
 services:
     AnswerForm: Alfred\App\WebModule\Forms\AnswerForm
     ChatForm: Alfred\App\WebModule\Forms\ChatForm
+    ChatMessageForm: Alfred\App\WebModule\Forms\ChatMessageForm
     EventForm: Alfred\App\WebModule\Forms\EventForm
     GifForm: Alfred\App\WebModule\Forms\GifForm
     LocationForm: Alfred\App\WebModule\Forms\LocationForm
